@@ -139,6 +139,22 @@ any other helper in your view, such as::
 
     echo $this->ContactInfo->address($contact);
 
+If you want to extend one of your classes with a class from a plugin, you need to first import the plugin, you want to extend one of your classes with a class from the lib folder of the plugin directory, you would do so like follows::
+
+    App::uses('ExamplePluginClass', 'ExamplePlugin.Lib');
+
+    class MyClass extends ExamplePluginClass {
+    
+    }
+
+or if you want to extend your AppController class with the AppController class from the plugin, you do so like this::
+
+    App::uses('ExamplePluginAppController', 'ExamplePlugin.Controller');
+
+    class AppController extends CrudManagerAppController {
+    
+    }
+    
 
 Creating Your Own Plugins
 =========================
